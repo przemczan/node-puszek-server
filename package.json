@@ -1,0 +1,21 @@
+{
+    "name": "puszek",
+    "version": "0.0.1",
+    "description": "Puszek project",
+    "author": "Przemczan <przemczan@gmail.com>",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "mongodb": "~1.4.0",
+        "mongoose": "~3.8.0",
+        "mongoose-auto-increment": "~3.0",
+        "node-validator": "~0.1.9",
+        "qs": "~2.3.2",
+        "ws": "~0.4.32"
+    },
+    "preferGlobal": false,
+    "private": true,
+    "analyze": true,
+    "license": "MIT"
+}
