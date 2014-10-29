@@ -7,5 +7,8 @@ module.exports = {
     },
     wsServer: {
         port: 5000
+    },
+    logs: {
+        filePath: './logs/logs.log'
     }
 };
