@@ -1,16 +1,16 @@
-var mongoose = require('mongoose');
+var Mongoose = require('mongoose');
 var mongooseAutoIncrement = require('mongoose-auto-increment');
 
 /**
  *
  * @type {Mongoose.Schema}
  */
-var MessageStatusSchema = new mongoose.Schema({
-        message: mongoose.Schema.Types.ObjectId,
+var MessageStatusSchema = new Mongoose.Schema({
+        message: Mongoose.Schema.Types.ObjectId,
         receiver: String,
         isRead: { type: Boolean, default: false }
     });
-
+var MessageStatusModel = Mongoose.model('MessageStatus', MessageStatusSchema);
 MessageStatusSchema.plugin(mongooseAutoIncrement.plugin, { model: 'MessageStatus', field: 'id' });
 
-module.exports = mongoose.model('MessageStatus', MessageStatusSchema);
+module.exports = MessageStatusModel;

@@ -4,7 +4,8 @@
     "description": "Puszek project",
     "author": "Przemczan <przemczan@gmail.com>",
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "start-dev": "node index-dev.js"
     },
     "dependencies": {
         "mongodb": "~1.4.0",

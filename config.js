@@ -3,7 +3,8 @@ module.exports = {
         uri: 'mongodb://localhost/puszek'
     },
     httpServer: {
-        port: 5001
+        port: 5001,
+        headersPrefix: 'puszek-'
     },
     wsServer: {
         port: 5000
