@@ -1,20 +1,23 @@
 var Mongoose = require('mongoose');
 var Util = require('util');
-var mongooseAutoIncrement = require('mongoose-auto-increment');
+//var mongooseAutoIncrement = require('mongoose-auto-increment');
 
 /**
  *
  * @type {Mongoose.Schema}
  */
 var MessageSchema = new Mongoose.Schema({
-		id: Number,
+		//id: Number,
+        client: { type: Mongoose.Schema.ObjectId, required: true, ref: 'client' },
 		createdAt: { type: Date, default: Date.now },
-		sender: String,
-		receivers: [String],
+		sender: { type: String, required: true },
+		receivers: { type: [String], required: true },
 		message: String
-	});
-var MessageModel = Mongoose.model('Message', MessageSchema);
-MessageSchema.plugin(mongooseAutoIncrement.plugin, { model: 'Message', field: 'id' });
+	}, {
+        collection: 'message'
+    });
+var MessageModel = Mongoose.model('message', MessageSchema);
+//MessageSchema.plugin(mongooseAutoIncrement.plugin, { model: 'message', field: 'id' });
 
 /**
  * Validators

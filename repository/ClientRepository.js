@@ -29,7 +29,7 @@ module.exports = {
                         .digest('hex');
 
                     if (validHash != _hash) {
-                        return _errorCallback('security-hash is invalid');
+                        return _errorCallback({ data: _string, hash: _hash, msg: 'security-hash is invalid' });
                     } else {
                         return _successCallback(_client);
                     }

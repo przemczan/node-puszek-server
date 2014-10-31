@@ -1,18 +1,20 @@
 var Mongoose = require('mongoose');
-var mongooseAutoIncrement = require('mongoose-auto-increment');
+//var mongooseAutoIncrement = require('mongoose-auto-increment');
 
 /**
  *
  * @type {Mongoose.Schema}
  */
 var ClientSchema = new Mongoose.Schema({
-		id: Number,
+		//id: Number,
 		createdAt: { type: Date, default: Date.now },
-        name: { type: String, unique: true },
-		privateKey: String
-	});
-var ClientModel = Mongoose.model('Client', ClientSchema);
-ClientSchema.plugin(mongooseAutoIncrement.plugin, { model: 'Client', field: 'id' });
+        name: { type: String, unique: true, required: true },
+		privateKey: { type: String, required: true }
+	}, {
+        collection: 'client'
+    });
+var ClientModel = Mongoose.model('client', ClientSchema);
+//ClientSchema.plugin(mongooseAutoIncrement.plugin, { model: 'client', field: 'id' });
 
 /**
  * Validators
