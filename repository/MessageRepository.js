@@ -37,7 +37,8 @@ module.exports = {
                 },
                 {
                     $push: { read_by: _ws.data.query.receiver }
-                }
+                },
+                { multi: true }
             )
             .exec(_callback);
     }
