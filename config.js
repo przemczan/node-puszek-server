@@ -1,6 +1,7 @@
 module.exports = {
     mongo: {
-        uri: 'mongodb://localhost/puszek'
+        uri: 'mongodb://localhost/puszek',
+        debug: true
     },
     httpServer: {
         port: 5001,

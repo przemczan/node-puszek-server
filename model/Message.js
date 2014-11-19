@@ -12,7 +12,8 @@ var MessageSchema = new Mongoose.Schema({
 		createdAt: { type: Date, default: Date.now },
 		sender: { type: String, required: true },
 		receivers: { type: [String], required: true },
-		message: String
+		message: String,
+		read_by: [String]
 	}, {
         collection: 'message'
     });
