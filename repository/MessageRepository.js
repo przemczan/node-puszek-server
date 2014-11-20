@@ -16,7 +16,7 @@ module.exports = {
                     receivers: { $in: _ws.data.query.subscribe },
                     read_by: { $nin: [_ws.data.query.receiver] }
                 },
-                { '_id': true, 'createdAt': true, 'message': true }
+                { '_id': true, 'createdAt': true, 'message': true, 'sender': true, 'receivers': true }
             )
             .exec(_callback);
     },
